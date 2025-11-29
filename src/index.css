@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@utility flex-v-center {
+  @apply flex items-center gap-x-1;
+}
+
+@utility flex-h-center {
+  @apply flex justify-center;
+}
