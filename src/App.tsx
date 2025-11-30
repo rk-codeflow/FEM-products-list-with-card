@@ -2,7 +2,7 @@ import DessertListContainer from "./DessertListContainer";
 
 function App() {
   return (
-    <div className="p-4">
+    <div className="container mx-auto px-4">
       <DessertListContainer />
     </div>
   );
