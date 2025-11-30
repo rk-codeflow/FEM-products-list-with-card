@@ -1,4 +1,4 @@
-import DessertListContainer from "./DessertListContainer";
+import DessertListContainer from "./components/DessertListContainer";
 
 function App() {
   return (

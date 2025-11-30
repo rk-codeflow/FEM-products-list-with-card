@@ -14,5 +14,5 @@ export interface DessertListProps {
 
 export interface DessertCardProps {
   desserts: DessertListProps[];
-  loading: boolean;
+  loading?: boolean;
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import DessertListPresenter from "./DessertListPresenter";
-import type { DessertListProps } from "./interface";
+import type { DessertListProps } from "../interface";
 
 const DessertListContainer = () => {
   const [dessert, setDessert] = useState<DessertListProps[]>([]);

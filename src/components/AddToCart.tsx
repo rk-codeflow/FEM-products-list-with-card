@@ -6,7 +6,7 @@ const AddToCart = () => {
         Your Cart (0)
       </h2>
       <div className="flex flex-col items-center justify-center">
-        <img src={emptyCart} alt="empty cart" />
+        <img src={emptyCart} alt="empty cart" className="mb-4" />
         <p>Your added items will appear here</p>
       </div>
     </div>
