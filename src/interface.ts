@@ -15,4 +15,12 @@ export interface DessertListProps {
 export interface DessertCardProps {
   desserts: DessertListProps[];
   loading?: boolean;
+  handleItemAdd: (id: number) => void;
+  onItemAdd: () => void;
+}
+
+export interface ClickProps {
+  desserts: DessertListProps[];
+  handleItemAdd?: (id: number) => void;
+  onItemAdd?: (id: number) => void;
 }

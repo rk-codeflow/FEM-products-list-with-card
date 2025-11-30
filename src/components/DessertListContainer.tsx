@@ -27,7 +27,13 @@ const DessertListContainer = () => {
     fetchLists();
   }, []);
 
-  return <DessertListPresenter desserts={dessert} loading={loading} />;
+  const handleItemAdd = (id: number) => {
+    console.log("item clicked", id);
+  };
+
+  return (
+    <DessertListPresenter desserts={dessert} handleItemAdd={handleItemAdd} />
+  );
 };
 
 export default DessertListContainer;
