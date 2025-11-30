@@ -3,7 +3,7 @@ import type { DessertCardProps } from "./interface";
 import addToCart from "/assets/icon-add-to-cart.svg";
 const DessertListPresenter = ({ desserts, loading }: DessertCardProps) => {
   return (
-    <div className="grid md:grid-cols-[2fr_1fr] gap-y-6">
+    <div className="grid md:grid-cols-[2fr_1fr] gap-y-6 gap-x-8">
       <div className="">
         <h2 className="text-md sm:text-3xl font-bold mb-8">Desserts</h2>
         <div className="grid sm:grid-cols-3 gap-y-6 gap-x-3">
