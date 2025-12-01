@@ -1,3 +1,4 @@
+import CartItem from "./CartItem";
 import emptyCart from "/assets/illustration-empty-cart.svg";
 const AddToCart = () => {
   return (
@@ -9,6 +10,8 @@ const AddToCart = () => {
         <img src={emptyCart} alt="empty cart" className="mb-4" />
         <p>Your added items will appear here</p>
       </div>
+
+      <CartItem />
     </div>
   );
 };
