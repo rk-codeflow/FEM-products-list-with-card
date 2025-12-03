@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import DessertListPresenter from "./DessertListPresenter";
-import type { DessertListProps } from "../interface";
+import type { CartItemProps, DessertListProps } from "../interface";
 
 const DessertListContainer = () => {
   const [dessert, setDessert] = useState<DessertListProps[]>([]);
+  const [items, setItems] = useState<CartItemProps[]>([]);
   const [loading, setLoading] = useState(false);
 
   const fetchLists = async () => {
@@ -27,12 +28,22 @@ const DessertListContainer = () => {
     fetchLists();
   }, []);
 
-  const handleItemAdd = (id: number) => {
-    console.log("item clicked", id);
+  const handleItemAdd = (item: CartItemProps) => {
+    const newItem = {
+      id: item.id,
+      name: item.name,
+    };
+    const updatedItems = [...items, newItem];
+    setItems(updatedItems);
+    console.log({ updatedItems });
   };
 
   return (
-    <DessertListPresenter desserts={dessert} handleItemAdd={handleItemAdd} />
+    <DessertListPresenter
+      desserts={dessert}
+      handleItemAdd={handleItemAdd}
+      items={items}
+    />
   );
 };
 

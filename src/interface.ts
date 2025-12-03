@@ -12,15 +12,24 @@ export interface DessertListProps {
   price: number;
 }
 
+export interface CartItemProps {
+  id?: number;
+  name?: string;
+  quantity?: number;
+  price?: number;
+  total?: number;
+  handleDelete?: () => void;
+}
 export interface DessertCardProps {
   desserts: DessertListProps[];
   loading?: boolean;
-  handleItemAdd: (id: number) => void;
-  onItemAdd: () => void;
+  handleItemAdd: (item: CartItemProps) => void;
+  onItemAdd: (item: CartItemProps) => void;
 }
 
 export interface ClickProps {
-  desserts: DessertListProps[];
-  handleItemAdd?: (id: number) => void;
-  onItemAdd?: (id: number) => void;
+  desserts?: DessertListProps[];
+  handleItemAdd?: (item: CartItemProps) => void;
+  onItemAdd?: (item: CartItemProps) => void;
+  items?: CartItemProps[];
 }
