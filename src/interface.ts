@@ -31,5 +31,7 @@ export interface ClickProps {
   desserts?: DessertListProps[];
   handleItemAdd?: (item: CartItemProps) => void;
   onItemAdd?: (item: CartItemProps) => void;
+  handleCartItemDelete?: (id: number) => void;
+  onItemDelete?: (id: number) => void;
   items?: CartItemProps[];
 }

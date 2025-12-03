@@ -15,7 +15,6 @@ const DessertListContainer = () => {
         throw new Error("Failed to fetch data");
       }
       const lists = await res.json();
-      console.log({ lists });
       setDessert(lists);
     } catch (error) {
       console.log("Error displaying data", error);
@@ -35,13 +34,17 @@ const DessertListContainer = () => {
     };
     const updatedItems = [...items, newItem];
     setItems(updatedItems);
-    console.log({ updatedItems });
   };
 
+  const handleCartItemDelete = (id: number) => {
+    const filtered = items.filter((item) => item.id !== id);
+    setItems(filtered);
+  };
   return (
     <DessertListPresenter
       desserts={dessert}
       handleItemAdd={handleItemAdd}
+      handleCartItemDelete={handleCartItemDelete}
       items={items}
     />
   );

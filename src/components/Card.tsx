@@ -4,7 +4,7 @@ import addToCart from "/assets/icon-add-to-cart.svg";
 const Card = ({ desserts, onItemAdd }: ClickProps) => {
   return (
     <div className="grid sm:grid-cols-3 gap-y-6 gap-x-3">
-      {desserts.map((dessert) => {
+      {desserts?.map((dessert) => {
         const { id, name, category, price, image } = dessert;
         return (
           <div key={id}>
