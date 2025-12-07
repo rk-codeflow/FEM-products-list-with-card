@@ -31,6 +31,7 @@ const DessertListContainer = () => {
     const newItem = {
       id: item.id,
       name: item.name,
+      quantity: 1,
     };
     const updatedItems = [...items, newItem];
     setItems(updatedItems);

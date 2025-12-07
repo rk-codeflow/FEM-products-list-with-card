@@ -1,5 +1,7 @@
 import type { ClickProps } from "../interface";
 import addToCart from "/assets/icon-add-to-cart.svg";
+import increment from "/assets/icon-increment-quantity.svg";
+import decrement from "/assets/icon-decrement-quantity.svg";
 
 const Card = ({ desserts, onItemAdd }: ClickProps) => {
   return (
@@ -11,10 +13,20 @@ const Card = ({ desserts, onItemAdd }: ClickProps) => {
             <img src={image.desktop} alt="dessert" className="rounded-lg" />
             <div className="flex-h-center relative -top-5">
               <button
-                className="flex-v-center rounded-2xl bg-white text-xs border border-gray-950 px-6 py-2 cursor-pointer"
+                className="cart-btn bg-white cursor-pointer"
                 onClick={() => onItemAdd?.(dessert)}
               >
                 <img src={addToCart} alt="add to cart" /> Add to Cart
+              </button>
+
+              <button className="cart-btn justify-between w-full bg-yellow-600">
+                <div className="h-4 w-4 rounded-full flex-center border border-white cursor-pointer">
+                  <img src={increment} alt="increment" />
+                </div>
+                <span>1</span>
+                <div className="h-4 w-4 rounded-full flex-center border border-white cursor-pointer">
+                  <img src={decrement} alt="decrement" />
+                </div>
               </button>
             </div>
             <p className="text-xs">{category}</p>

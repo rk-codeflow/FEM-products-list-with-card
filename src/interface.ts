@@ -13,10 +13,10 @@ export interface DessertListProps {
 }
 
 export interface CartItemProps {
-  id?: number;
-  name?: string;
-  quantity?: number;
+  id: number;
+  name: string;
   price?: number;
+  quantity?: number;
   total?: number;
   handleDelete?: () => void;
 }
@@ -29,6 +29,7 @@ export interface DessertCardProps {
 
 export interface ClickProps {
   desserts?: DessertListProps[];
+  quantity?: number;
   handleItemAdd?: (item: CartItemProps) => void;
   onItemAdd?: (item: CartItemProps) => void;
   handleCartItemDelete?: (id: number) => void;
