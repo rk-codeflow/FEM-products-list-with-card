@@ -1,4 +1,4 @@
-import type { ClickProps } from "../interface";
+import type { ClickProps } from "../../interface";
 import deleteIcon from "/assets/icon-remove-item.svg";
 import emptyCart from "/assets/illustration-empty-cart.svg";
 const AddToCart = ({ items, onItemDelete }: ClickProps) => {

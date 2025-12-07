@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import DessertListPresenter from "./DessertListPresenter";
-import type { CartItemProps, DessertListProps } from "../interface";
+import DessertListPresenter from "../presenter/DessertListPresenter";
+import type { Dessert } from "../../types/dessert/dessert";
+import type { CartItem } from "../../types/cart/CartItem";
 
 const DessertListContainer = () => {
-  const [dessert, setDessert] = useState<DessertListProps[]>([]);
-  const [items, setItems] = useState<CartItemProps[]>([]);
+  const [dessert, setDessert] = useState<Dessert[]>([]);
+  const [items, setItems] = useState<CartItem[]>([]);
   const [loading, setLoading] = useState(false);
 
   const fetchLists = async () => {
@@ -27,7 +28,7 @@ const DessertListContainer = () => {
     fetchLists();
   }, []);
 
-  const handleItemAdd = (item: CartItemProps) => {
+  const handleItemAdd = (item: CartItem) => {
     const newItem = {
       id: item.id,
       name: item.name,
@@ -37,7 +38,7 @@ const DessertListContainer = () => {
     setItems(updatedItems);
   };
 
-  const handleCartItemDelete = (id: number) => {
+  const handleItemDelete = (id: number) => {
     const filtered = items.filter((item) => item.id !== id);
     setItems(filtered);
   };
@@ -45,7 +46,7 @@ const DessertListContainer = () => {
     <DessertListPresenter
       desserts={dessert}
       handleItemAdd={handleItemAdd}
-      handleCartItemDelete={handleCartItemDelete}
+      handleItemDelete={handleItemDelete}
       items={items}
     />
   );

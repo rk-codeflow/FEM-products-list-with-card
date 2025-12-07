@@ -1,9 +1,9 @@
-import type { ClickProps } from "../interface";
 import addToCart from "/assets/icon-add-to-cart.svg";
 import increment from "/assets/icon-increment-quantity.svg";
 import decrement from "/assets/icon-decrement-quantity.svg";
+import type { CardProps } from "../../types/props/CardProps";
 
-const Card = ({ desserts, onItemAdd }: ClickProps) => {
+const Card = ({ desserts, onItemAdd }: CardProps) => {
   return (
     <div className="grid sm:grid-cols-3 gap-y-6 gap-x-3">
       {desserts?.map((dessert) => {
